@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Collaborative Whiteboard</h1>
+            <div class="connection-status">
+                <span id="status">Connecting...</span>
+                <span class="users">Users: <span id="usersCount">1</span></span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="toolbar">
+                <div class="tool-group">
+                    <h3>Tools</h3>
+                    <button id="pencilBtn" class="tool active">✏️ Pencil</button>
+                    <button id="eraserBtn" class="tool">🧽 Eraser</button>
+                </div>
+
+                <div class="tool-group">
+                    <h3>Color</h3>
+                    <input type="color" id="colorPicker" value="#000000">
+                    <div class="color-presets">
+                        <div class="color-option" style="background: #000000" data-color="#000000"></div>
+                        <div class="color-option" style="background: #ff0000" data-color="#ff0000"></div>
+                        <div class="color-option" style="background: #0000ff" data-color="#0000ff"></div>
+                        <div class="color-option" style="background: #00ff00" data-color="#00ff00"></div>
+                        <div class="color-option" style="background: #ffff00" data-color="#ffff00"></div>
+                    </div>
+                </div>
+
+                <div class="tool-group">
+                    <h3>Brush Size</h3>
+                    <input type="range" id="brushSize" min="1" max="50" value="3">
+                    <span id="sizeValue">3px</span>
+                </div>
+
+                <div class="tool-group">
+                    <button id="clearBtn" class="danger">Clear Board</button>
+                    <button id="saveBtn">Save Image</button>
+                </div>
+            </aside>
+
+            <main class="whiteboard-container">
+                <canvas id="whiteboard"></canvas>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
